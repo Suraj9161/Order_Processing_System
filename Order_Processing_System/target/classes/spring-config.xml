@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definition for PaymentServiceImpl -->
+    <bean id="paymentService" class="in.springIoC.beans.PaymentSercicesImpl"/>
+    
+    <!-- Bean definition for OrderServiceImpl with setter injection -->
+    <bean id="orderService" class="in.springIoC.beans.OrderServiceImpl">
+        <!-- Injecting PaymentServiceImpl bean -->
+        <property name="paymentServices" ref="paymentService"/>
+    </bean>
+
+</beans>
